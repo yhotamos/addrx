@@ -2,6 +2,12 @@
 	"name": "addrx",
 	"module": "index.ts",
 	"type": "module",
+	"scripts": {
+		"test": "bun test src/**/*.test.ts",
+		"test:watch": "bun run test --watch --only-failures",
+		"watch": "bun build src/index.ts --outdir=dist --format=esm --watch",
+		"build": "bun run test --only-failures && bun build src/index.ts --outdir=dist --format=esm --minify"
+	},
 	"devDependencies": {
 		"@biomejs/biome": "2.4.9",
 		"@types/bun": "latest"
